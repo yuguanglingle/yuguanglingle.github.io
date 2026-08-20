@@ -1,0 +1,53 @@
+---
+layout: article
+title: "An article written in HTML"
+date: 2026-08-19
+---
+
+<!-- Same front matter as a Markdown article. The difference: everything below is
+     plain HTML, so you can drop in anything you like. Delete this file whenever
+     you don't need it as a reference any more. -->
+
+<p>
+  Most articles are easier to write in Markdown. Use an <code>.html</code> file instead
+  when you want something Markdown can't express — a hand-drawn diagram, a chart, an
+  embedded demo.
+</p>
+
+<h2>A screenshot</h2>
+
+<p>
+  Put the image file in <code>articles/images/</code>, then point at it. With a caption:
+</p>
+
+<!--
+<figure>
+  <img src="/articles/images/my-screenshot.png" alt="Describe what the picture shows">
+  <figcaption>A short caption.</figcaption>
+</figure>
+-->
+
+<p>
+  (That example is commented out because the image doesn't exist yet.) The same
+  <code>![alt](/articles/images/my-screenshot.png)</code> works in a Markdown article too.
+</p>
+
+<h2>A visualization</h2>
+
+<p>
+  An SVG lives directly in the page — no libraries, no build step, and it stays sharp at
+  any size:
+</p>
+
+<svg viewBox="0 0 320 140" width="320" height="140" role="img" aria-label="Bar chart: 3, 7, 5 and 9 across four runs">
+  <rect x="20"  y="110" width="40" height="20" fill="#1a5fb4"></rect>
+  <rect x="90"  y="50"  width="40" height="80" fill="#1a5fb4"></rect>
+  <rect x="160" y="75"  width="40" height="55" fill="#1a5fb4"></rect>
+  <rect x="230" y="25"  width="40" height="105" fill="#1a5fb4"></rect>
+  <line x1="10" y1="130" x2="310" y2="130" stroke="currentColor" stroke-width="1"></line>
+</svg>
+
+<p>
+  For anything more involved, generate a chart as a PNG or SVG elsewhere, save it into
+  <code>articles/images/</code>, and link to it like a screenshot.
+</p>

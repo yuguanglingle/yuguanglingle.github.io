@@ -1,0 +1,47 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yuguang</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<h1>Yuguang</h1>
+
+<!-- ===== Your intro. Edit the paragraphs below. ===== -->
+<p class="lede">Notes on AI, agents, and building with them.</p>
+
+<p>
+  Hi — I'm Yuguang. I am an applied AI engineer and scientist building, shipping, and evaluating AI and Agentic systems. In this Github Pages, I want to document observation, understanding, lessons learned, and thoughts about the rapidly changing AI space.
+
+  I want to achieve two goals as part of my writing: 1. putting thoughts into knowledge, turning a vague feeling into something concrete, and internalize it as the process. 2. Share to the public, help people to understand, and welcome feedbacks so that we all learn. 
+  
+  To achieve these two goals, I will only share knowledge from my own experiences and original thoughts, while not relying on AI to write any articles. I will only use AI to correct grammar and make my sentences concise whenever possible.
+  
+  I welcome you to create github issues or DM me to provide feedbacks. Thank you!
+</p>
+<!-- ===== End of intro. ===== -->
+
+<h2>Articles</h2>
+
+<!-- This list builds itself from the files in the articles/ folder. -->
+{% assign articles = site.pages | where_exp: "p", "p.path contains 'articles/'" | sort: "date" | reverse %}
+<ul class="articles">
+  {% for a in articles %}
+  <li>
+    <time datetime="{{ a.date | date_to_xmlschema }}">{{ a.date | date: "%b %-d, %Y" }}</time>
+    <a href="{{ a.url }}">{{ a.title }}</a>
+  </li>
+  {% endfor %}
+</ul>
+
+<footer>
+  <a href="https://github.com/yuguanglingle">GitHub</a>
+</footer>
+
+</body>
+</html>
