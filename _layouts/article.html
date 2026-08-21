@@ -12,7 +12,10 @@
 
 <article>
   <h1>{{ page.title }}</h1>
-  <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+  <p class="meta">
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+    <span class="views" hidden>&middot; <span class="views-number"></span> views</span>
+  </p>
 
   {{ content }}
 </article>
@@ -20,6 +23,27 @@
 <footer>
   <a href="/">All articles</a>
 </footer>
+
+<!-- Visitor counting, via GoatCounter. Replace MYCODE below with your own site code
+     (see README). Until you do, the site works exactly as before and no count is shown. -->
+<script data-goatcounter="https://MYCODE.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+<script>
+  // Ask GoatCounter how often this page has been viewed, then reveal the number.
+  // If it isn't set up yet, or the request fails, nothing appears — that's fine.
+  (function () {
+    var site = document.querySelector('[data-goatcounter]')
+                       .dataset.goatcounter.replace(/\/count$/, '');
+    fetch(site + '/counter/' + encodeURIComponent(location.pathname) + '.json')
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+      .then(function (data) {
+        document.querySelector('.views-number').textContent = data.count;
+        document.querySelector('.views').hidden = false;
+      })
+      .catch(function () {});
+  })();
+</script>
 
 </body>
 </html>

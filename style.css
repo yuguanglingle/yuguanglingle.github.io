@@ -55,7 +55,8 @@ time { color: var(--muted); font-size: .875rem; }
 
 /* Article page */
 .back { font-size: .875rem; margin-bottom: 2rem; }
-article time { display: block; margin-bottom: 2rem; }
+article .meta { margin-bottom: 2rem; }
+.views { color: var(--muted); font-size: .875rem; }
 
 article img,
 article svg,
